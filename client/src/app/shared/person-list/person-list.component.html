@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-title>Person List</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let person of people">
+        <h3 mat-line>
+          <a mat-button>{{person.name}}</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

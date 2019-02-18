@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { OktaAuthModule } from '@okta/okta-angular';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PersonListComponent } from './shared/person-list/person-list.component';
 
 const config = {
   issuer: 'https://dev-569755.oktapreview.com/oauth2/default',
@@ -23,7 +24,8 @@ const config = {
     AppComponent,
     CarListComponent,
     CarEditComponent,
-    HomeComponent
+    HomeComponent,
+    PersonListComponent
   ],
   imports: [
     BrowserModule,
