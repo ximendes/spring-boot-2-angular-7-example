@@ -37,7 +37,14 @@ public class DemoApplication {
 	}
 
 	@Bean
-	ApplicationRunner init(CarRepository repository) {
+	ApplicationRunner init(CarRepository repository, PersonRepository personRepository) {
+
+		Stream.of("Maria Juana" , "João Estrela").forEach( name ->{
+			Person person = new Person();
+			person.setName(name);
+			personRepository.save(person);
+		});
+
 		return args -> {
 			Stream.of("Ferrari", "Jaguar", "Porsche", "Lamborghini", "Bugatti",
 					"AMC Gremlin", "Triumph Stag", "Ford Pinto", "Yugo GV").forEach(name -> {
@@ -46,6 +53,7 @@ public class DemoApplication {
 				repository.save(car);
 			});
 			repository.findAll().forEach(System.out::println);
+			personRepository.findAll().forEach(System.out::println);
 		};
 	}
 
